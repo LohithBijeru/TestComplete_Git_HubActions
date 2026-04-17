@@ -1,0 +1,16 @@
+name: repro-elevation
+on:
+  workflow_dispatch:
+
+jobs:
+  repro:
+    runs-on: self-hosted
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Run TestExecute Script
+        shell: powershell
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+          .\script.ps1
