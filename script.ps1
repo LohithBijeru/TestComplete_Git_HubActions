@@ -1,5 +1,5 @@
 $testExecutePath = "C:\Program Files (x86)\SmartBear\TestExecute 15\x64\Bin\TestExecute.exe"
-$projectFile = "dummy.pjs"
+$projectFile = "C:\Users\Public\Documents\TestComplete 15 Samples\Web\Orders\Web\JavaScript\Orders_Web_JavaScript.pjs"
 
 if (-not (Test-Path $testExecutePath)) {
     Write-Error "TestExecute not found at: $testExecutePath"
