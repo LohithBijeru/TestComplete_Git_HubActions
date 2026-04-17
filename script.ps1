@@ -7,11 +7,8 @@ if (-not (Test-Path $testExecutePath)) {
 }
 
 try {
-    Write-Host "Setting execution policy..."
-    Start-Process -FilePath "powershell.exe" -ArgumentList "-Command", "Set-ExecutionPolicy -ExecutionPolicy Bypass" -Verb RunAs -Wait
-
     Write-Host "Running TestExecute in silent mode..."
-    $process = Start-Process -FilePath $testExecutePath -ArgumentList $projectFile, "/r", "/e", "/SilentMode", "/ns" -Wait -PassThru -NoNewWindow
+    $process = Start-Process -FilePath $testExecutePath -ArgumentList $projectFile, "/r", "/e", "/SilentMode", "/ns" -Wait -PassThru
 
     Write-Host "TestExecute completed with exit code: $($process.ExitCode)"
     exit $process.ExitCode
